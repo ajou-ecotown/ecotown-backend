@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: echo-town
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/echo_town?useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+          ddl-auto: create-drop
+    defer-datasource-initialization: true
+    show-sql: true
+
+  sql:
+    init:
+      data-locations: classpath:db/data.sql
+      mode: always
+
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
